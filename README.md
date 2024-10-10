@@ -15,7 +15,21 @@ The website is organized into sections, with each section providing detailed inf
 
 *insert sections here*
 
+### Table of contents
+On this page...
+1. [About RavynOS](#about)
+2. [Legal informatios](#legal)
+    2.1 [Licenses](#license1)
+3. [We can now **start** with **finding** what you need.](#finder)
 
-| 1- Beginning |
+## About RavynOS <a name="about"></a>
+Some introduction text, formatted in heading 2 style
 
-|  1.1 - About RavynOS |
+## Legal informations<a name="legal"></a>
+The first paragraph text
+
+### Sub paragraph <a name="license"></a>
+This is a sub paragraph, formatted in heading 3 style
+
+## Paragraph called Finder<a name="finder"></a>
+The second paragraph text
