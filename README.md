@@ -13,14 +13,14 @@ The website is organized into sections, with each section providing detailed inf
 
 ## Explore
 
-*insert sections here*
+>*insert sections here*
 
-### Table of contents
-On this page...
-1. [About RavynOS](#about)
-2. [Legal informatios](#legal)
-    2.1 [Licenses](#license1)
-3. [We can now **start** with **finding** what you need.](#finder)
+>### Table of contents
+>On this page...
+>1. [About RavynOS](#about)
+>2. [Legal informatios](#legal)
+>    2.1 [Licenses](#license1)
+>3. [We can now **start** with **finding** what you need.](#finder)
 
 ## About RavynOS <a name="about"></a>
 Some introduction text, formatted in heading 2 style
