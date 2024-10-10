@@ -14,3 +14,7 @@ The website is organized into sections, with each section providing detailed inf
 ## Explore
 
 *insert sections here*
+
+
+| 1- Beginning |
+|  1.1 - About RavynOS |
