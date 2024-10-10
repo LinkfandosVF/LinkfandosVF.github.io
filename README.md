@@ -8,7 +8,7 @@ The website is organized into sections, with each section providing detailed inf
 
 <details>
 <summary>About this website</summary>
-**This version of the wiki is made to be displayed as a webpage, and will most likely only work correctly by using the URL.**
+<strong>This version of the wiki is made to be displayed as a webpage, and will most likely only work correctly by using the URL.</strong>
 </details>
 
 ## Explore
