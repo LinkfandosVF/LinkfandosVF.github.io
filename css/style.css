@@ -1,6 +1,41 @@
 
 
-/* Utiliser <div class="border-image-clip-path"></div> pour l'importer*/
+.animated-mesh-gradient-background{
+
+    background-color:#b899ff;
+background-image:
+radial-gradient(at 41% 80%, hsla(194,97%,78%,1) 0px, transparent 50%),
+radial-gradient(at 52% 39%, hsla(294,80%,66%,1) 0px, transparent 50%),
+radial-gradient(at 67% 93%, hsla(277,86%,76%,1) 0px, transparent 50%),
+radial-gradient(at 15% 56%, hsla(70,93%,74%,1) 0px, transparent 50%),
+radial-gradient(at 1% 0%, hsla(204,66%,75%,1) 0px, transparent 50%),
+radial-gradient(at 28% 69%, hsla(228,95%,61%,1) 0px, transparent 50%),
+radial-gradient(at 22% 19%, hsla(266,71%,66%,1) 0px, transparent 50%);
+
+
+    animation: animatedgradient 10s ease infinite;
+    background-size: 200% 200%;
+}
+
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 25%;
+	}
+	25% {
+		background-position: 100% 50%;
+	}
+	50% {
+		background-position: 50% 75%;
+	}
+	75% {
+		background-position: 25% 25%;
+	}
+	100% {
+		background-position: 0% 25%;
+	}
+
+}66,71%,66%,1) 0px, transparent 50%);
 
 .border-image-clip-path {
     position: relative;
