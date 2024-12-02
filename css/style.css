@@ -1,22 +1,14 @@
+.animated-background{
 
-
-.animated-mesh-gradient-background{
-
-    background-color:#b899ff;
-background-image:
-radial-gradient(at 41% 80%, hsla(194,97%,78%,1) 0px, transparent 50%),
-radial-gradient(at 52% 39%, hsla(294,80%,66%,1) 0px, transparent 50%),
-radial-gradient(at 67% 93%, hsla(277,86%,76%,1) 0px, transparent 50%),
-radial-gradient(at 15% 56%, hsla(70,93%,74%,1) 0px, transparent 50%),
-radial-gradient(at 1% 0%, hsla(204,66%,75%,1) 0px, transparent 50%),
-radial-gradient(at 28% 69%, hsla(228,95%,61%,1) 0px, transparent 50%),
-radial-gradient(at 22% 19%, hsla(266,71%,66%,1) 0px, transparent 50%);
-
+    background-color:#ff99ac;
+    background-image:
+    radial-gradient(at 0% 77%, hsla(167,66%,79%,1) 0px, transparent 50%),
+    radial-gradient(at 54% 10%, hsla(296,65%,73%,1) 0px, transparent 50%),
+    radial-gradient(at 16% 29%, hsla(240,97%,60%,1) 0px, transparent 50%);
 
     animation: animatedgradient 10s ease infinite;
     background-size: 200% 200%;
 }
-
 
 @keyframes animatedgradient {
 	0% {
@@ -35,22 +27,4 @@ radial-gradient(at 22% 19%, hsla(266,71%,66%,1) 0px, transparent 50%);
 		background-position: 0% 25%;
 	}
 
-}66,71%,66%,1) 0px, transparent 50%);
-
-.border-image-clip-path {
-    position: relative;
-    width: 200px;
-    height: 100px;
-    border: 10px solid;
-    border-image: linear-gradient(45deg, gold, deeppink) 1;
-    clip-path: inset(0 round 10px);
-}
-
-.perspective {
-  perspective: 3000px;
-}
-.container {
-  width: 400px;
-  height: 400px;
-  transform-style: preserve-3d;
 }
