@@ -1,4 +1,9 @@
 
+@import url('https://rawcdn.githack.com/SochavaAG/example-mycode/master/_common/css/reset.css');
+.ag-format-container {
+  width: 1142px;
+  margin: 0 auto;
+}
 @font-face {
   font-family: "sf";
   src: url("https://github.com/bayai/bayai.github.io/blob/master/fonts/sf-pro-display-medium.woff2");
@@ -60,11 +65,7 @@ li a:hover {
   background-color: #111;
 }
 
-@import url('https://rawcdn.githack.com/SochavaAG/example-mycode/master/_common/css/reset.css');
-.ag-format-container {
-  width: 1142px;
-  margin: 0 auto;
-}
+
 
 
 body {
