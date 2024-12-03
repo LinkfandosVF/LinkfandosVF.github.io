@@ -83,8 +83,6 @@ a {
   gap: 15px;
 }
 .wrapper .card {
-  width: 150px;
-  height: 150px;
   border-radius: 7px;
   background: #c873fd;
   cursor: pointer;
