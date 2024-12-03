@@ -87,7 +87,7 @@ a {
   background: #c873fd;
   cursor: pointer;
   transition: all 0.25s ease;
-  text-align: center;
+  align: center;
 }
 .wrapper:hover > :not(:hover) {
   filter: blur(5px);
