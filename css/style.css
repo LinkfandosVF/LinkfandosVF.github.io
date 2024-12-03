@@ -96,6 +96,7 @@ a {
   border-radius: 7px;
   background: #FFD2A0;
   cursor: pointer;
+  color: black;
   transition: all 0.25s ease;
   align-items: left;
   gap: 15px;
