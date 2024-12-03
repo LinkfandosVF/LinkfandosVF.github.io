@@ -88,6 +88,7 @@ a {
   cursor: pointer;
   transition: all 0.25s ease;
   align-items: center;
+  gap: 15px;
   justify-content: center;
 }
 .wrapper:hover > :not(:hover) {
