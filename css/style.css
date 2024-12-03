@@ -16,6 +16,12 @@ body {
     font-size: 20px;
     -webkit-text-size-adjust: 100%;
 }
+
+h1 {
+	text-align: center;
+	font-family: sf-bold, sf;
+	font-size: 32px;
+}
 .bkg{
 
     background-color:#ff99ac;
