@@ -91,6 +91,16 @@ a {
   gap: 15px;
   justify-content: center;
 }
+
+.cardmain {
+  border-radius: 7px;
+  background: #FFD2A0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  align-items: left;
+  gap: 15px;
+  justify-content: center;
+}
 .wrapper:hover > :not(:hover) {
   filter: blur(5px);
   opacity: .5;
