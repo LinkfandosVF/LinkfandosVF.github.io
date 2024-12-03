@@ -9,6 +9,13 @@
   src: url("https://github.com/bayai/bayai.github.io/blob/master/fonts/sf-pro-display-medium.woff2");
 }
 
+
+body {
+    line-height: 1.2;
+    font-family: sf, "sf", Arial, Verdana, Helvetica, sans-serif;
+    font-size: 20px;
+    -webkit-text-size-adjust: 100%;
+}
 .bkg{
 
     background-color:#ff99ac;
