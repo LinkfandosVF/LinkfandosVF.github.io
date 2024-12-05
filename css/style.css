@@ -24,6 +24,14 @@ h1 {
 	font-family: sf-bold, sf;
 	font-size: 32px;
 }
+
+
+h2 {
+	text-align: center;
+	font-family: sf-bold, sf;
+	font-size: 16px;
+}
+
 .bkg{
 
     background-color:#ff99ac;
