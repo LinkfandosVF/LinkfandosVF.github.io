@@ -103,7 +103,6 @@ a {
 .wrapper .cardpink {
   border-radius: 7px;
   background: #f861a0;
-  cursor: pointer;
   transition: all 0.25s ease;
   align-items: center;
   gap: 15px;
