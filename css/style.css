@@ -129,6 +129,15 @@ a {
   justify-content: center;
 }
 
+.wrapper .cardblue {
+  border-radius: 7px;
+  background: #3bdbd;
+  transition: all 0.25s ease;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+}
+
 .cardmain {
   border-radius: 7px;
   background: #FFD2A0;
