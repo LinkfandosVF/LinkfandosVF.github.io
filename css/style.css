@@ -44,6 +44,23 @@ h2 {
     background-size: 200% 200%;
 }
 
+.bkg2{
+
+background-color:#99ffe4;
+background-image:
+radial-gradient(at 26% 91%, hsla(284,74%,71%,1) 0px, transparent 50%),
+radial-gradient(at 6% 83%, hsla(259,77%,70%,1) 0px, transparent 50%),
+radial-gradient(at 5% 24%, hsla(194,83%,78%,1) 0px, transparent 50%),
+radial-gradient(at 66% 81%, hsla(78,98%,63%,1) 0px, transparent 50%),
+radial-gradient(at 99% 88%, hsla(266,75%,66%,1) 0px, transparent 50%),
+radial-gradient(at 35% 48%, hsla(231,70%,69%,1) 0px, transparent 50%),
+radial-gradient(at 61% 67%, hsla(83,97%,76%,1) 0px, transparent 50%);
+
+    animation: animatedgradient 10s ease infinite;
+    background-size: 200% 200%;
+}
+
+
 @keyframes animatedgradient {
 	0% {
 		background-position: 0% 25%;
