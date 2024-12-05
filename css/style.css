@@ -84,7 +84,17 @@ a {
 }
 .wrapper .card {
   border-radius: 7px;
-  background: #c873fd;
+  background: #e530d0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  align-items: center;
+  gap: 15px;
+  justify-content: center;
+}
+
+.wrapper .cardpink {
+  border-radius: 7px;
+  background: #f861a0;
   cursor: pointer;
   transition: all 0.25s ease;
   align-items: center;
@@ -100,8 +110,10 @@ a {
   transition: all 0.25s ease;
   align-items: left;
   gap: 15px;
-  justify-content: center;
+  justify-content: left;
 }
+
+
 .wrapper:hover > :not(:hover) {
   filter: blur(5px);
   opacity: .5;
