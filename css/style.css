@@ -98,6 +98,9 @@ a {
   align-items: center;
   gap: 15px;
   justify-content: center;
+  border-radius: 7px;
+  display: flex;
+  gap: 15px;
 }
 
 .wrapper .cardpink {
