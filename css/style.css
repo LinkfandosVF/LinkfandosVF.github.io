@@ -60,6 +60,22 @@ radial-gradient(at 61% 67%, hsla(83,97%,76%,1) 0px, transparent 50%);
     background-size: 200% 200%;
 }
 
+.bkg3{
+
+background-color:#99fff1;
+background-image:
+radial-gradient(at 88% 79%, hsla(174,95%,61%,1) 0px, transparent 50%),
+radial-gradient(at 51% 43%, hsla(59,65%,79%,1) 0px, transparent 50%),
+radial-gradient(at 28% 12%, hsla(182,72%,71%,1) 0px, transparent 50%),
+radial-gradient(at 89% 24%, hsla(224,77%,76%,1) 0px, transparent 50%),
+radial-gradient(at 15% 74%, hsla(188,62%,68%,1) 0px, transparent 50%),
+radial-gradient(at 22% 33%, hsla(317,91%,72%,1) 0px, transparent 50%),
+radial-gradient(at 48% 97%, hsla(218,95%,78%,1) 0px, transparent 50%);
+
+    animation: animatedgradient 10s ease infinite;
+    background-size: 200% 200%;
+}
+
 
 @keyframes animatedgradient {
 	0% {
