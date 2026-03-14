@@ -1,0 +1,727 @@
+<head>
+<title>ALAS^3</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Share+Tech+Mono&family=Barlow:wght@400;600&display=swap');
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+.root {
+  background: #05090f;
+  min-height: 100vh;
+  font-family: sans-serif;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── BG dark base ── */
+.bg-base {
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,30,80,0.08) 3px, rgba(0,30,80,0.08) 4px),
+    repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(0,40,120,0.04) 60px, rgba(0,40,120,0.04) 61px);
+}
+
+.liltext {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14px;
+}
+/* ── SLANTED BANDS (the core P3R aesthetic) ── */
+.band {
+  position: absolute;
+  transform: skewY(-8deg);
+  transform-origin: left center;
+}
+
+.band-back-1 {
+  background: #0a1a5c;
+  height: 320px;
+  left: -5%;
+  right: -5%;
+  top: 30px;
+  opacity: 0.5;
+}
+.band-back-2 {
+  background: #0033aa;
+  height: 180px;
+  left: -5%;
+  right: -5%;
+  top: 120px;
+  opacity: 0.35;
+}
+.band-main {
+  background: linear-gradient(90deg, #1155ff 0%, #0044cc 60%, #0033aa 100%);
+  height: 110px;
+  left: -5%;
+  right: -5%;
+  top: 160px;
+  z-index: 2;
+}
+.band-accent {
+  background: #33eebb;
+  height: 8px;
+  left: -5%;
+  right: -5%;
+  top: 158px;
+  z-index: 3;
+  opacity: 0.9;
+}
+.band-accent-2 {
+  background: #33eebb;
+  height: 4px;
+  left: -5%;
+  right: -5%;
+  top: 272px;
+  z-index: 3;
+  opacity: 0.6;
+}
+.band-bottom {
+  background: linear-gradient(90deg, #0a1a5c 0%, #071240 100%);
+  height: 220px;
+  left: -5%;
+  right: -5%;
+  top: 310px;
+  opacity: 0.7;
+  z-index: 1;
+}
+
+/* ── LAYOUT ── */
+.content {
+  position: relative;
+  z-index: 10;
+  padding: 0;
+}
+
+/* ── TOP STRIPE ── */
+.top-stripe {
+  background: #1a55ff;
+  transform: skewY(-2deg);
+  transform-origin: left;
+  padding: 6px 2rem 6px 2rem;
+  margin-bottom: -3px;
+}
+.top-stripe-inner {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: rgba(255,255,255,0.7);
+  transform: skewY(2deg);
+}
+
+/* ── HERO BLOCK ── */
+.hero {
+  padding: 2rem 2.5rem 0;
+  position: relative;
+}
+
+.hero-label {
+  font-family: sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: #33eebb;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.hero-name-block {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.hero-firstname {
+  font-family: 'Times New Roman', Times, serif,sans-serif;
+  font-size: 5.5rem;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 0.9;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  text-shadow: 4px 4px 0 rgba(0,50,180,0.4);
+}
+
+.hero-lastname {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 5.5rem;
+  font-weight: 900;
+  font-style: italic;
+  line-height: 0.9;
+  color: #1a66ff;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  -webkit-text-stroke: 2px #4488ff;
+}
+
+/* ── BIG BAND LABEL (LEVEL UP style) ── */
+.big-band {
+  background: linear-gradient(90deg, #1155ff 0%, #0044cc 70%, transparent 100%);
+  transform: skewY(-3deg) skewX(-2deg);
+  transform-origin: left;
+  margin: 1.5rem -2.5rem;
+  padding: 0.6rem 2.5rem 0.6rem 3rem;
+  position: relative;
+  z-index: 5;
+}
+.big-band-text {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #fff;
+  transform: skewY(3deg) skewX(2deg);
+  display: block;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+}
+.big-band::before {
+  content: '';
+  position: absolute;
+  left: 0; top: -6px;
+  width: 100%; height: 4px;
+  background: #33eebb;
+}
+.big-band::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 80%; height: 3px;
+  background: #33eebb;
+  opacity: 0.6;
+}
+
+/* ── ROLE TAGS ── */
+.role-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 0.5rem 2.5rem;
+  margin-top: -0.25rem;
+}
+.rtag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+}
+.rtag-blue { background: #1a55ff; color: #fff; }
+.rtag-teal { background: #33eebb; color: #05090f; }
+.rtag-dark { background: rgba(255,255,255,0.1); color: #aaccff; border: 1px solid rgba(100,150,255,0.3); clip-path: none; }
+
+/* ── MAIN GRID ── */
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-top: 0.5rem;
+}
+
+/* ── EXP / STATS block ── */
+.stats-panel {
+  background: rgba(5,15,60,0.85);
+  border-top: 3px solid #1a55ff;
+  padding: 1.5rem 2.5rem;
+  position: relative;
+}
+.stats-panel::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    -45deg, transparent, transparent 8px,
+    rgba(0,30,100,0.08) 8px, rgba(0,30,100,0.08) 9px
+  );
+  pointer-events: none;
+}
+
+.panel-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 4px;
+  color: #33eebb;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.panel-label::before {
+  content: '';
+  display: inline-block;
+  width: 18px; height: 18px;
+  background: #1a55ff;
+  transform: skewX(-10deg);
+  flex-shrink: 0;
+}
+
+.stat-item {
+  margin-bottom: 0.75rem;
+}
+.stat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 3px;
+}
+.stat-lbl {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaccff;
+}
+.stat-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  font-style: italic;
+  color: #fff;
+  line-height: 1;
+}
+.stat-num sup {
+  font-size: 0.6rem;
+  font-style: normal;
+  color: #33eebb;
+  letter-spacing: 2px;
+}
+.stat-track {
+  height: 5px;
+  background: rgba(255,255,255,0.07);
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 4px) 100%, 0 100%);
+}
+.stat-fill {
+  height: 100%;
+  position: relative;
+}
+
+/* ── SKILLS panel ── */
+.skills-panel {
+  background: rgba(2,8,30,0.9);
+  border-top: 3px solid #0033aa;
+  padding: 1.5rem 2rem;
+}
+
+.skill-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.sk-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 110px;
+  flex-shrink: 0;
+  color: #cce0ff;
+}
+.sk-bar {
+  flex: 1;
+  height: 6px;
+  background: rgba(255,255,255,0.06);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 5px) 100%, 0 100%);
+}
+.sk-fill {
+  height: 100%;
+  clip-path: polygon(0 0, 100% 0, calc(100% - 4px) 100%, 0 100%);
+}
+.sk-pct {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 10px;
+  color: #334466;
+  width: 28px;
+  text-align: right;
+}
+
+.Subtitle{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 11px;
+}
+.exp-panel {
+  grid-column: span 2;
+  background: rgba(3,10,40,0.9);
+  border-left: 4px solid #1a55ff;
+  padding: 1.5rem 2.5rem;
+  position: relative;
+}
+
+
+.exp-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 0.5rem; }
+
+.exp-card {
+  border-top: 2px solid rgba(40,100,255,0.3);
+  padding-top: 0.75rem;
+  position: relative;
+}
+.exp-card::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: 0;
+  width: 40px; height: 2px;
+  background: #1a55ff;
+}
+.exp-date {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 9px;
+  color: #1a55ff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.exp-role {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+.exp-org {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 9px;
+  color: #33eebb;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.exp-desc {
+  font-size: 0.72rem;
+  color: #6688aa;
+  line-height: 1.55;
+}
+
+/* ── ARCANA ROW ── */
+.arcana-panel {
+  grid-column: span 2;
+  background: #0a1a5c;
+  transform: skewY(-1.5deg);
+  transform-origin: left;
+  padding: 1rem 2.5rem;
+  margin: 0.5rem 0;
+}
+.arcana-inner {
+  transform: skewY(1.5deg);
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.arcana-ttl {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: 4px;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+.arcana-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.a-chip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(100,150,255,0.2);
+  padding: 4px 10px;
+  clip-path: polygon(6px 0, 100% 0, calc(100% - 6px) 100%, 0 100%);
+}
+.a-chip-num {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 8px;
+  color: #1a55ff;
+}
+.a-chip-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #aaccff;
+}
+
+/* ── CONTACT / FOOTER ── */
+.footer-band {
+  background: linear-gradient(90deg, #1a55ff 0%, #0a2acc 40%, #05090f 100%);
+  transform: skewY(-2deg);
+  transform-origin: left;
+  padding: 1.25rem 2.5rem;
+  margin-top: 0.5rem;
+}
+.footer-inner {
+  transform: skewY(2deg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.contact-items {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.c-item {
+  display: flex;
+  flex-direction: column;
+}
+.c-lbl {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 8px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 1px;
+}
+.c-val {
+  font-family: sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #fff;
+}
+.footer-id {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 9px;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 2px;
+  text-align: right;
+}
+
+/* decorative corner marks */
+.deco-corner {
+  position: absolute;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 8px;
+  color: rgba(100,150,255,0.25);
+  letter-spacing: 2px;
+}
+</style>
+</head>
+
+<body>
+  <div class="root">
+  <div class="bg-base"></div>
+  <div class="band band-back-1"></div>
+  <div class="band band-back-2"></div>
+  <div class="band band-bottom"></div>
+  <div class="band band-main"></div>
+  <div class="band band-accent"></div>
+  <div class="band band-accent-2"></div>
+<br>
+  <div class="content">
+
+    <!-- TOP STRIPE -->
+    <div class="top-stripe">
+      <div class="top-stripe-inner">
+        <span>FTP CLIENT ACCESS - DO NOT DISTRIBUTE</span>
+        <span>CLEARANCE LVL 5 // 2009.11.30</span>
+      </div>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-label">◈ Web dev - Artist & designer</div>
+      <div class="hero-name-block">
+        <div class="hero-firstname">Alas³</div>
+        <div class="hero-lastname">"@Linkfandos"</div>
+      </div>
+    </div>
+
+    <!-- BIG BAND -->
+    <div class="big-band">
+      <span class="big-band-text">// "What am i even doing here?"</span>
+    </div>
+
+    <!-- ROLE TAGS -->
+    <div class="role-tags">
+      <span class="rtag rtag-blue">General UI design</span>
+      <span class="rtag rtag-teal">Digital Art</span>
+      <span class="rtag rtag-dark">PHP/HTML</span>
+      <span class="rtag rtag-dark">CSS/JS</span>
+      <span class="rtag rtag-dark">Python/BASH</span>
+    </div>
+
+    <!-- MAIN GRID -->
+    <div class="main-grid">
+
+      <!-- STATS -->
+      <div class="stats-panel">
+        <div class="panel-label">Status — As a Student</div>
+
+        <div class="stat-item">
+          <div class="stat-top">
+            <span class="stat-lbl">Academics</span>
+            <span class="stat-num">88<sup>%</sup></span>
+          </div>
+          <div class="stat-track"><div class="stat-fill" style="width:70%;background:#1a55ff;"></div></div>
+            <p class="Subtitle">On my way to finish High School and graduate.</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-top">
+            <span class="stat-lbl">My Life In General</span>
+            <span class="stat-num">12.8<sup>%</sup></span>
+          </div>
+          <div class="stat-track"><div class="stat-fill" style="width:12.8%;background:#33eebb;"></div></div>
+          <p class="Subtitle">If we compare it to the social life of a student of my age.</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-top">
+            <span class="stat-lbl">Professional</span>
+            <span class="stat-num">4<sup>pjcts</sup></span>
+          </div>
+          <div class="stat-track"><div class="stat-fill" style="width:14%;background:#ff4477;"></div></div>
+          <p class="Subtitle">Got some work with people. Friends, mostly.</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-top">
+            <span class="stat-lbl">Finesse</span>
+            <span class="stat-num">87<sup>%</sup></span>
+          </div>
+          <div class="stat-track"><div class="stat-fill" style="width:87%;background:#ffcc00;"></div></div>
+          <p class="Subtitle">Great reviews!</p>
+        </div>
+        <div class="stat-item">
+          <div class="stat-top">
+            <span class="stat-lbl">Study</span>
+            <span class="stat-num">31<sup>pts</sup></span>
+          </div>
+          <div class="stat-track"><div class="stat-fill" style="width:31%;background:#aa55ff;"></div></div>
+          <p class="Subtitle">Listen, you can find everything online so i'm not gonna bother hiding it. I suck at school.</p>
+        </div>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="skills-panel">
+        <div class="panel-label">Skills</div>
+
+        <div class="skill-row">
+          <span class="sk-name">Linux</span>
+          <div class="sk-bar"><div class="sk-fill" style="width:95%;background:#1a55ff;"></div></div>
+          <span class="sk-pct">75</span>
+        </div>
+        <div class="skill-row">
+          <span class="sk-name">MacOS</span>
+          <div class="sk-bar"><div class="sk-fill" style="width:88%;background:#33eebb;"></div></div>
+          <span class="sk-pct">88</span>
+        </div>
+        <div class="skill-row">
+          <span class="sk-name">Windows</span>
+          <div class="sk-bar"><div class="sk-fill" style="width:80%;background:#ff4477;"></div></div>
+          <span class="sk-pct">80</span>
+        </div>
+        <div class="skill-row">
+          <span class="sk-name">Python, php...</span>
+          <div class="sk-bar"><div class="sk-fill" style="width:90%;background:#ff8833;"></div></div>
+          <span class="sk-pct">67</span>
+        </div>
+        <div class="skill-row">
+          <span class="sk-name">Design</span>
+          <div class="sk-bar"><div class="sk-fill" style="width:70%;background:#aa55ff;"></div></div>
+          <span class="sk-pct">70</span>
+        </div>
+        <div class="skill-row">
+          <span class="sk-name">Servers, Hosting</span>
+          <div class="sk-bar"><div class="sk-fill" style="width:85%;background:#ffcc00;"></div></div>
+          <span class="sk-pct">85</span>
+        </div>
+        <div class="skill-row">
+          <span class="sk-name">Art</span>
+          <div class="sk-bar"><div class="sk-fill" style="width:65%;background:#33eebb;"></div></div>
+          <span class="sk-pct">65</span>
+        </div>
+        <p class="Liltext">I do have extended work skills with informatic in general, and i'm quite proud! If i something is wrong, then i fix it myself. Don't expect too much professional history though, i'm still a minor!</p>
+        <br>
+        <p class="Liltext">Thankfully i've got some pretty interesting github repositories and projects down there, so check 'em out!</p>
+      </div>
+
+      <!-- ARCANA ROW -->
+      <div class="arcana-panel" style="grid-column: span 2;">
+        <div class="arcana-inner">
+          <span class="arcana-ttl">Usernames</span>
+          <div class="arcana-chips">
+            <div class="a-chip"><span class="a-chip-num">00</span><span class="a-chip-name">Gtb: LinkfandosVF</span></div>
+            <div class="a-chip"><span class="a-chip-num">I</span><span class="a-chip-name">TG: linkfandos</span></div>
+            <div class="a-chip"><span class="a-chip-num">II</span><span class="a-chip-name">Dsc: aalllaaasss</span></div>
+            <div class="a-chip"><span class="a-chip-num">III</span><span class="a-chip-name">Bsk: linkfandos.b.s</span></div>
+            <div class="a-chip"><span class="a-chip-num">IV</span><span class="a-chip-name">Linkfandos</span></div>
+            <div class="a-chip"><span class="a-chip-num">V</span><span class="a-chip-name">aalllaaasss</span></div>
+            <div class="a-chip"><span class="a-chip-num">VII</span><span class="a-chip-name">Abîmes</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="exp-panel">
+        <div class="panel-label">Projects / Diplomas</div>
+        <div class="exp-grid">
+          <div class="exp-card">
+            <div class="exp-date">2026</div>
+            <div class="exp-role">Miro</div>
+            <div class="exp-org">Github - Personal</div>
+            <div class="exp-desc">A all in one php webapp that acts as a Markdown note taking app. Available on github.</div>
+          </div>
+          <div class="exp-card">
+            <div class="exp-date">2024</div>
+            <div class="exp-role">Student - Brevet des collèges</div>
+            <div class="exp-org">Collège Saint Louis Notre Dame</div>
+            <div class="exp-desc">C'est... le brevet, quoi.</div>
+          </div>
+          <div class="exp-card">
+            <div class="exp-date">2009</div>
+            <div class="exp-role">Born: Yes</div>
+            <div class="exp-org">Birthdate</div>
+            <div class="exp-desc">Une réf au Razmokets. En gros j'suis né quoi...</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FOOTER BAND -->
+    <div class="footer-band">
+      <div class="footer-inner">
+        <div class="contact-items">
+          <div class="c-item">
+            <span class="c-lbl">Email</span>
+            <span class="c-val">gael.fandos@icloud.com</span>
+          </div>
+          <div class="c-item">
+            <span class="c-lbl">Gear</span>
+            <span class="c-val">Macbook Air M2, iPad g7</span>
+          </div>
+          <div class="c-item">
+            <span class="c-lbl">Disponibility</span>
+            <span class="c-val">All the time, for now.</span>
+          </div>
+        </div>
+        <div class="footer-id">
+          FILE #00-FOOL<br>
+          PT // ITS ALIVE<br>
+          DO NOT DISTRIBUTE OR USE
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+</body>
